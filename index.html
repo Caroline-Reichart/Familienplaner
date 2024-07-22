@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familienplaner</title>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="style.css"> 
+
+</head>
+<body>
+    <div class="container">
+        <h1>Familienplaner</h1>
+        <form id="memberForm">
+            <div class="form-group">
+                <input type="text" id="memberName" placeholder="Familienmitglied Name" required>
+                <button type="submit">Familienmitglied hinzufügen</button>
+            </div>
+        </form>
+        <form id="eventForm">
+            <label for="eventName"></label>
+            <input type="text" id="eventName" placeholder="Ereignis" required>
+            
+            <label for="eventDate"></label>
+            <input type="date" id="eventDate" placeholder="Datum" required>
+            
+            <label for="eventTime"></label>
+            <input type="time" id="eventTime" placeholder="Uhrzeit" required>
+            
+            <label for="eventMember"></label>
+            <select id="eventMember" required>
+                <option value="" disabled selected>Familienmitglied auswählen</option>
+            </select>
+            
+            <button type="submit">Ereignis hinzufügen</button>
+        </form>
+        
+        <div id='calendar'></div>
+        <div class="member-list">
+            <h2>Familien&shymitglieder</h2>
+            <ul id="memberList"></ul>
+        </div>
+        <div class="event-list">
+            <h2>Ereignisse</h2>
+            <ul id="eventList"></ul>
+        </div>
+    </div>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familienplaner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .event {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Familienplaner</h1>
+        <form id="eventForm">
+            <input type="text" id="eventName" placeholder="Ereignisname" required>
+            <input type="date" id="eventDate" required>
+            <button type="submit">Ereignis hinzufügen</button>
+        </form>
+        <h2>Geplante Ereignisse</h2>
+        <ul id="eventList"></ul>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html> -->
