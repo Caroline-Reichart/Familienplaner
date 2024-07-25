@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => { // Wird ausgeführt, wenn das Dokument vollständig geladen wurde
     const memberForm = document.getElementById('memberForm'); // Formular zum Hinzufügen von Familienmitgliedern
     const eventForm = document.getElementById('eventForm'); // Formular zum Hinzufügen von Ereignissen
+    const eventDiscription = document.getElementById('eventDiscription'); // Formular zum Hinzufügen von Ereignissen
     const eventMemberSelect = document.getElementById('eventMember'); // Dropdown-Menü zum Auswählen eines Familienmitglieds
     const memberList = document.getElementById('memberList'); // Liste der Familienmitglieder
     const eventList = document.getElementById('eventList');     // Liste der Ereignisse
