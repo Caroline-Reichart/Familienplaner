@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => { // Wird ausgeführt, wenn 
             memberForm.reset(); // Formular zurücksetzen
         }
     });
-
     eventForm.addEventListener('submit', (e) => { // Wird aufgerufen, wenn das Formular zum Hinzufügen von Ereignissen gesendet wird
         e.preventDefault(); // Standardverhalten des Browsers verhindern
 
@@ -84,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => { // Wird ausgeführt, wenn 
             console.error('Event form is missing required fields'); // Debugging
         }
     });
-
-    function addMember(name) { // Funktion zum Hinzufügen von Familienmitgliedern
+        
+        function addMember(name) { // Funktion zum Hinzufügen von Familienmitgliedern
         const member = { id: Date.now(), name }; // Neues Mitglied erstellen
         members.push(member); // Mitglied zur Liste hinzufügen
         localStorage.setItem('members', JSON.stringify(members)); // Mitglieder im lokalen Speicher speichern
@@ -159,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => { // Wird ausgeführt, wenn 
                 const newDate = prompt('Neues Datum eingeben (DD-MM-YYYY):', event.start.split('T')[0]); // Neues Datum abfragen
                 const newTime = prompt('Neue Uhrzeit eingeben (HH:MM):', event.start.split('T')[1]); // Neue Uhrzeit abfragen
                 const newMember = prompt('Neues Familienmitglied eingeben:', event.title.split(' (')[1].slice(0, -1)); // Neues Mitglied abfragen
+                const newDescription = prompt('Neue Beschreibung eingeben:', event.extendedProps.description); // Neue Beschreibung abfragen
                 if (newName && newDate && newTime && newMember) { // Wenn alle Felder ausgefüllt sind
                     event.title = `${newName} (${newMember})`; // Titel aktualisieren
                     event.start = `${newDate}T${newTime}`; // Startdatum und -zeit aktualisieren
@@ -195,8 +195,8 @@ document.addEventListener('DOMContentLoaded', () => { // Wird ausgeführt, wenn 
     function highlightMemberEvents(memberName) { // Funktion zum Hervorheben der Ereignisse eines Mitglieds
         calendar.getEvents().forEach(event => { // Für jedes Ereignis
             if (event.title.includes(`(${memberName})`)) { // Wenn das Ereignis das Mitglied enthält
-                event.setProp('backgroundColor', 'yellow'); // Hintergrundfarbe ändern
-                event.setProp('borderColor', 'yellow'); // Rahmenfarbe ändern
+                event.setProp('backgroundColor', 'blue'); // Hintergrundfarbe ändern
+                event.setProp('borderColor', 'blue'); // Rahmenfarbe ändern
             } else { 
                 event.setProp('backgroundColor', ''); // Hintergrundfarbe entfernen
                 event.setProp('borderColor', ''); // Rahmenfarbe entfernen
