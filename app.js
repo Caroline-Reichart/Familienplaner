@@ -155,12 +155,12 @@ document.addEventListener('DOMContentLoaded', () => { // Wird ausgeführt, wenn 
             editButton.textContent = 'Bearbeiten'; // Text hinzufügen
             editButton.addEventListener('click', () => { // Klick-Event hinzufügen
                 const newName = prompt('Neuen Ereignisnamen eingeben:', event.title.split(' (')[0]); // Neuen Namen abfragen
+                const newDescription = prompt('Neue Beschreibung eingeben:', event.extendedProps.description); // Neue Beschreibung abfragen
                 const newDate = prompt('Neues Datum eingeben (DD-MM-YYYY):', event.start.split('T')[0]); // Neues Datum abfragen
                 const newTime = prompt('Neue Uhrzeit eingeben (HH:MM):', event.start.split('T')[1]); // Neue Uhrzeit abfragen
                 const newMember = prompt('Neues Familienmitglied eingeben:', event.title.split(' (')[1].slice(0, -1)); // Neues Mitglied abfragen
-                const newDescription = prompt('Neue Beschreibung eingeben:', event.extendedProps.description); // Neue Beschreibung abfragen
-                if (newName && newDate && newTime && newMember) { // Wenn alle Felder ausgefüllt sind
-                    event.title = `${newName} (${newMember})`; // Titel aktualisieren
+                if (newName && newDate && newTime && newMember && newDescription) { // Wenn alle Felder ausgefüllt sind
+                    event.title = `${newName} (${newMember} ${newDescription})`; // Titel aktualisieren
                     event.start = `${newDate}T${newTime}`; // Startdatum und -zeit aktualisieren
                     localStorage.setItem('events', JSON.stringify(events));     // Ereignisse im lokalen Speicher speichern
                     calendar.getEventById(event.id).remove(); // Ereignis aus dem Kalender entfernen
